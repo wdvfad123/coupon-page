@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>团购会代金券领取</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="text"], input[type="tel"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5cb85c;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>团购会代金券领取</h2>
+        <form id="couponForm">
+            <label for="customerName">客户姓名:</label>
+            <input type="text" id="customerName" name="customerName" required>
+            
+            <label for="customerPhone">客户手机号:</label>
+            <input type="tel" id="customerPhone" name="customerPhone" required>
+            
+            <button type="submit">领取代金券</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('couponForm').onsubmit = function(event) {
+            event.preventDefault();
+            // 这里可以添加逻辑，比如发送填写的信息到服务器
+            var customerName = document.getElementById('customerName').value;
+            var customerPhone = document.getElementById('customerPhone').value;
+            alert('感谢您的参与，' + customerName + '。您的手机号为: ' + customerPhone + '。您已成功领取代金券。');
+            // TODO: 实际的后端处理逻辑，比如将信息存储到数据库等
+        };
+    </script>
+</body>
+</html>
